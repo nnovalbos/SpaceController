@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SpaceController.Views.Templates.SightingTemplateView">
+    <ContentView.Content>
+
+        <Frame CornerRadius="5" HorizontalOptions="FillAndExpand" HasShadow="True" Margin="5">
+            <StackLayout>
+                <Label Text="{Binding ObservatoryCode}" FontSize="Subtitle" HorizontalOptions="Start"/>
+                <Label Text="{Binding Date, StringFormat= '{0:dd/MM/yyyy HH:mm:ss}'}" HorizontalOptions="End" TextColor="LightGray"/>
+
+                <StackLayout.GestureRecognizers>
+                 <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding ShowSightingDetailCommand}"/>
+             </StackLayout.GestureRecognizers>
+
+            </StackLayout>
+        </Frame>
+        
+    </ContentView.Content>
+</ContentView>

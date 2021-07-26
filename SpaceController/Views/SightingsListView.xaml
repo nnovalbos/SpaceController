@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:utility="clr-namespace:SpaceController.Common"
+    xmlns:templates="clr-namespace:SpaceController.Views.Templates"
+    utility:ViewModelLocator.AutoWireViewModel="True"
+    Title="Sightings List"
+    x:Class="SpaceController.Views.SightingsListView">
+    <ContentPage.Content>
+
+          <CollectionView VerticalOptions="FillAndExpand"
+                      SelectionMode="None"
+                      Margin="0"
+                      ItemsSource="{Binding Sightings}"
+                      HorizontalOptions="FillAndExpand">
+
+              
+              <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                       <templates:SightingTemplateView/>
+                     </DataTemplate>
+              </CollectionView.ItemTemplate>
+              
+              <CollectionView.EmptyView>
+
+                    <Label Text="No Sighting found! :("
+                            TextColor="#00A6FF" 
+                            HorizontalTextAlignment="Center"
+                            VerticalTextAlignment="Center"
+                            HorizontalOptions="CenterAndExpand"
+                            VerticalOptions="CenterAndExpand" />
+
+               </CollectionView.EmptyView>
+
+              </CollectionView>
+
+    </ContentPage.Content>
+</ContentPage>

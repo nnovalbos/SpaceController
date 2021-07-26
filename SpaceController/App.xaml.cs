@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Threading.Tasks;
+using SpaceController.Bootstrap;
+using SpaceController.Contracts.Services;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,11 +13,13 @@ namespace SpaceController
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            AppContainer.RegisterDependencies();
         }
 
-        protected override void OnStart()
+        protected async override void OnStart()
         {
+            var navigationService = AppContainer.Resolve<INavigationService>();
+            await navigationService.InitializeAsync();
         }
 
         protected override void OnSleep()
