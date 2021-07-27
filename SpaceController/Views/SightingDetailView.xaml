@@ -4,13 +4,33 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:utility="clr-namespace:SpaceController.Common"
     utility:ViewModelLocator.AutoWireViewModel="True"
+    Title="{Binding ObservatoryCode}"
     x:Class="SpaceController.Views.SightingDetailView">
     <ContentPage.Content>
 
-          <StackLayout HorizontalOptions="CenterAndExpand"
-                     VerticalOptions="CenterAndExpand">
+        <StackLayout x:Name="mainLayout" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
 
-            <Label Text="Vista detalle"/>
+
+            <ActivityIndicator HorizontalOptions="CenterAndExpand"
+                               VerticalOptions="CenterAndExpand"
+                               HeightRequest="36"
+                               WidthRequest="36"
+                               IsRunning="True"
+                               IsVisible="{Binding IsBusy}"/>
+
+            <StackLayout Margin="10,10,10,20"
+                         Spacing="0"
+                         IsVisible="{Binding IsBusy, Converter={StaticResource BooleanInverterConverter}}">
+
+                 <Label Text="{Binding DeviceCode, StringFormat = 'Device: {0}'}"
+                   FontSize="Title"
+                   HorizontalOptions="CenterAndExpand"/>
+
+                <Label Text="{Binding Date, StringFormat= '{0:dd/MM/yyyy hh:mm:ss}'}"
+                       HorizontalOptions="CenterAndExpand"
+                       FontSize="10" />
+
+            </StackLayout>
 
         </StackLayout>
 

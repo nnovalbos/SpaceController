@@ -30,6 +30,8 @@
     <None Remove="Views\Templates\" />
     <None Remove="Models\" />
     <None Remove="ViewModels\Templates\" />
+    <None Remove="Contracts\Utils\" />
+    <None Remove="Converters\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Contracts\" />
@@ -45,5 +47,7 @@
     <Folder Include="Views\Templates\" />
     <Folder Include="Models\" />
     <Folder Include="ViewModels\Templates\" />
+    <Folder Include="Contracts\Utils\" />
+    <Folder Include="Converters\" />
   </ItemGroup>
 </Project>

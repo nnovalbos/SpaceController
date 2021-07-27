@@ -9,31 +9,41 @@
     x:Class="SpaceController.Views.SightingsListView">
     <ContentPage.Content>
 
-          <CollectionView VerticalOptions="FillAndExpand"
+        <Grid>
+             <CollectionView
+                      Grid.Row="0"
+                      VerticalOptions="FillAndExpand"
                       SelectionMode="None"
                       Margin="0"
+                      IsVisible="{Binding IsBusy, Converter={StaticResource BooleanInverterConverter}}"
                       ItemsSource="{Binding Sightings}"
                       HorizontalOptions="FillAndExpand">
 
               
-              <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                       <templates:SightingTemplateView/>
-                     </DataTemplate>
-              </CollectionView.ItemTemplate>
+                  <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                           <templates:SightingTemplateView/>
+                         </DataTemplate>
+                  </CollectionView.ItemTemplate>
               
-              <CollectionView.EmptyView>
+                  <CollectionView.EmptyView>
 
-                    <Label Text="No Sighting found! :("
-                            TextColor="#00A6FF" 
-                            HorizontalTextAlignment="Center"
-                            VerticalTextAlignment="Center"
-                            HorizontalOptions="CenterAndExpand"
-                            VerticalOptions="CenterAndExpand" />
+                        <Label Text="No Sighting found! :("
+                                HorizontalTextAlignment="Center"
+                                VerticalTextAlignment="Center"
+                                HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="CenterAndExpand" />
 
-               </CollectionView.EmptyView>
+                   </CollectionView.EmptyView>
 
               </CollectionView>
 
+            <ActivityIndicator Grid.Row="0"
+                               HeightRequest="36"
+                               WidthRequest="36"
+                               IsVisible="{Binding IsBusy}"
+                               IsRunning="{Binding IsBusy}"/>
+
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

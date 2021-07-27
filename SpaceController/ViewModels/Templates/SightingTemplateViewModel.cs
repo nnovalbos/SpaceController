@@ -17,16 +17,11 @@ namespace SpaceController.ViewModels.Templates
             sighting = new Sighting();
         }
 
-        #region Properties
         public string ObservatoryCode => sighting.ObservatoryCode;
 
-        public DateTime Date => sighting.Date;
+        public DateTime Date => sighting.DateAndTime;
 
-        #endregion
-
-        #region Commands
         public ICommand ShowSightingDetailCommand => new Command(async () => await OnShowSightingDetailCommand());
-        #endregion
 
         public override Task InitializeAsync(object parameter)
         {

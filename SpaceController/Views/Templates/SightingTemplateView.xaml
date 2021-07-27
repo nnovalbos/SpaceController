@@ -7,14 +7,20 @@
 
         <Frame CornerRadius="5" HorizontalOptions="FillAndExpand" HasShadow="True" Margin="5">
             <StackLayout>
-                <Label Text="{Binding ObservatoryCode}" FontSize="Subtitle" HorizontalOptions="Start"/>
-                <Label Text="{Binding Date, StringFormat= '{0:dd/MM/yyyy HH:mm:ss}'}" HorizontalOptions="End" TextColor="LightGray"/>
 
-                <StackLayout.GestureRecognizers>
-                 <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding ShowSightingDetailCommand}"/>
-             </StackLayout.GestureRecognizers>
+                <Label Text="{Binding ObservatoryCode}"
+                       FontSize="Subtitle"
+                       HorizontalOptions="Start"/>
+
+                <Label Text="{Binding Date, StringFormat= '{0:dd/MM/yyyy hh:mm:ss}'}"
+                       HorizontalOptions="End"
+                       TextColor="LightGray"/>
 
             </StackLayout>
+
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding ShowSightingDetailCommand}"/>
+            </Frame.GestureRecognizers>
         </Frame>
         
     </ContentView.Content>
