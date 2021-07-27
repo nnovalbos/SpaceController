@@ -38,11 +38,7 @@
 
               </CollectionView>
 
-            <ActivityIndicator Grid.Row="0"
-                               HeightRequest="36"
-                               WidthRequest="36"
-                               IsVisible="{Binding IsBusy}"
-                               IsRunning="{Binding IsBusy}"/>
+            <ActivityIndicator Grid.Row="0" Style="{StaticResource aiStyle}"/>
 
         </Grid>
     </ContentPage.Content>

@@ -48,11 +48,12 @@ namespace SpaceController.Views
             {
                 for (int columnIndex = 0; columnIndex < vm.Sighting.DeviceResolution.Colums; columnIndex++)
                 {
-                    var backGroundColor = vm.Sighting.DeviceMatrix[matrixIndex].Equals('1') ? Color.Black : Color.White;
+                    var primaryColor = (Color)Application.Current.Resources["PrimaryColor"];
+                    var backGroundColor = vm.Sighting.DeviceMatrix[matrixIndex].Equals('1') ? primaryColor : Color.White;
 
                     var cell = new StackLayout
                     {
-                        BackgroundColor = Color.Black,
+                        BackgroundColor = primaryColor,
                         Padding = new Thickness(1, 1, 1, 1)
                     };
 

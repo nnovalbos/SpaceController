@@ -4,6 +4,26 @@
              xmlns:converters="clr-namespace:SpaceController.Converters"
              x:Class="SpaceController.App">
     <Application.Resources>
+
+
+         <Color x:Key="PrimaryColor">#00A6FF</Color>
+         <Color x:Key= "AccentColor">#FFFFFF</Color>
+
+        <Style x:Key="NavigationBarStyle" TargetType = "NavigationPage">
+            <Setter Property="BarBackgroundColor" Value="{StaticResource PrimaryColor}"></Setter>
+            <Setter Property="BarTextColor" Value="{StaticResource AccentColor}"></Setter>
+        </Style>
+
+        <Style x:Key="aiStyle" TargetType="ActivityIndicator">
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+            <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+            <Setter Property="HeightRequest" Value="36"/>
+             <Setter Property="WidthRequest" Value="36"/>
+            <Setter Property="Color" Value="{StaticResource PrimaryColor}"/>
+            <Setter Property="IsRunning" Value="{Binding IsBusy}"/>
+            <Setter Property="IsVisible" Value="{Binding IsBusy}"/>
+        </Style>
+
          <converters:BooleanInverterValueConverter x:Key="BooleanInverterConverter"/>
     </Application.Resources>
 </Application>

@@ -47,6 +47,7 @@ namespace SpaceController.Services
             if (page is SightingsListView)
             {
                 var nv = new NavigationPage(page);
+                nv.Style = (Style)Application.Current.Resources["NavigationBarStyle"];
                 Application.Current.MainPage = nv;
 
             }

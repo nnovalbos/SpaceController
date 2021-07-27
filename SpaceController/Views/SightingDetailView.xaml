@@ -10,15 +10,9 @@
 
         <StackLayout x:Name="mainLayout" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
 
+             <ActivityIndicator Style="{StaticResource aiStyle}"/>
 
-            <ActivityIndicator HorizontalOptions="CenterAndExpand"
-                               VerticalOptions="CenterAndExpand"
-                               HeightRequest="36"
-                               WidthRequest="36"
-                               IsRunning="True"
-                               IsVisible="{Binding IsBusy}"/>
-
-            <StackLayout Margin="10,10,10,20"
+            <StackLayout Margin="10"
                          Spacing="0"
                          IsVisible="{Binding IsBusy, Converter={StaticResource BooleanInverterConverter}}">
 
@@ -28,7 +22,8 @@
 
                 <Label Text="{Binding Date, StringFormat= '{0:dd/MM/yyyy hh:mm:ss}'}"
                        HorizontalOptions="CenterAndExpand"
-                       FontSize="10" />
+                       TextColor="LightGray"
+                       FontSize="12" />
 
             </StackLayout>
 
